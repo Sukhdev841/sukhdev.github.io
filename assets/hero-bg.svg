@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1a2e"/>
+      <stop offset="0.6" stop-color="#16213e"/>
+      <stop offset="1" stop-color="#0f3460"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="700" fill="url(#g)"/>
+  <text x="50%" y="50%" font-family="Segoe UI, sans-serif" font-size="90" text-anchor="middle" dominant-baseline="middle" fill="#ffffff15">CAR STICKERS</text>
+  <text x="50%" y="62%" font-family="Segoe UI, sans-serif" font-size="22" text-anchor="middle" fill="#ffffff30">[ Replace assets/hero-bg with your background image ]</text>
+</svg>

@@ -3,225 +3,158 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Browse Sukhdev's design catalog and start a conversation about your project." />
-  <title>Designs Catalog | Sukhdev</title>
+  <meta name="description" content="Browse Sukhdev's car sticker designs. Each sticker has a unique ID — tell me the ID of the one you want." />
+  <title>Sticker Designs | Sukhdev</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <!-- ===== Header ===== -->
   <header>
-    <a href="index.html" class="logo">Sukhdev</a>
+    <a href="index.html" class="logo">
+      <img src="assets/logo.svg" alt="Sukhdev Car Stickers logo" class="logo-img" />
+    </a>
     <nav>
       <a href="index.html">Home</a>
       <a href="designs.html" class="active">Designs</a>
+      <a href="pastwork.html">Past Work</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
   <!-- ===== Page Hero ===== -->
   <div class="page-hero">
-    <h1>Design Catalog</h1>
-    <p>Browse our curated collection of interior styles. Select a design you love and reach out directly to get started.</p>
+    <h1>Car Sticker Designs</h1>
+    <p>Every sticker has a unique ID. Note the ID of the one you like and send it to me — that's all I need to get started.</p>
   </div>
 
-  <!-- ===== Designs Grid ===== -->
+  <!-- ===== Stickers Grid ===== -->
   <section>
-    <h2>All Designs</h2>
-    <p class="section-sub">Click "I'm Interested" on any design to start a conversation with me.</p>
+    <h2>All Stickers</h2>
+    <p class="section-sub">Tap “Copy ID”, then email or DM me the ID of the sticker you want.</p>
 
     <div class="designs-grid">
 
-      <!-- Design 1 -->
+      <!-- Each card's ID must match its file name in /stickers -->
+      <!-- Sticker SD-A1B-7Z9 -->
       <div class="design-card">
         <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">🛋️</span>
-            <span>Modern Minimalist</span>
-          </div>
+          <img src="stickers/SD-A1B-7Z9.svg" alt="Car sticker SD-A1B-7Z9" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="tag">Living Room</span>
-          <h3>Modern Minimalist</h3>
-          <p>Clean lines, neutral palettes, and clutter-free spaces that let the architecture breathe.</p>
+          <span class="sticker-id">ID: <code>SD-A1B-7Z9</code></span>
         </div>
         <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Modern%20Minimalist%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
+          <button type="button" class="copy-id" data-id="SD-A1B-7Z9">Copy ID</button>
         </div>
       </div>
 
-      <!-- Design 2 -->
+      <!-- Sticker SD-C4F-92K -->
       <div class="design-card">
         <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">🌿</span>
-            <span>Biophilic Design</span>
-          </div>
+          <img src="stickers/SD-C4F-92K.svg" alt="Car sticker SD-C4F-92K" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="tag">Living Room</span>
-          <h3>Biophilic Green</h3>
-          <p>Bring nature indoors with plants, natural wood textures, and earthy tones.</p>
+          <span class="sticker-id">ID: <code>SD-C4F-92K</code></span>
         </div>
         <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Biophilic%20Green%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
+          <button type="button" class="copy-id" data-id="SD-C4F-92K">Copy ID</button>
         </div>
       </div>
 
-      <!-- Design 3 -->
+      <!-- Sticker SD-E7H-3X1 -->
       <div class="design-card">
         <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">🏺</span>
-            <span>Bohemian Style</span>
-          </div>
+          <img src="stickers/SD-E7H-3X1.svg" alt="Car sticker SD-E7H-3X1" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="tag">Bedroom</span>
-          <h3>Bohemian Chic</h3>
-          <p>Eclectic patterns, rich colors, and layered textiles for a free-spirited, cozy bedroom.</p>
+          <span class="sticker-id">ID: <code>SD-E7H-3X1</code></span>
         </div>
         <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Bohemian%20Chic%20bedroom%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
+          <button type="button" class="copy-id" data-id="SD-E7H-3X1">Copy ID</button>
         </div>
       </div>
 
-      <!-- Design 4 -->
+      <!-- Sticker SD-K2M-8P5 -->
       <div class="design-card">
         <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">⚫</span>
-            <span>Industrial Loft</span>
-          </div>
+          <img src="stickers/SD-K2M-8P5.svg" alt="Car sticker SD-K2M-8P5" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="tag">Office / Studio</span>
-          <h3>Industrial Loft</h3>
-          <p>Exposed brick, steel accents, and raw wood surfaces for a bold, urban aesthetic.</p>
+          <span class="sticker-id">ID: <code>SD-K2M-8P5</code></span>
         </div>
         <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Industrial%20Loft%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
+          <button type="button" class="copy-id" data-id="SD-K2M-8P5">Copy ID</button>
         </div>
       </div>
 
-      <!-- Design 5 -->
+      <!-- Sticker SD-Q9R-4T6 -->
       <div class="design-card">
         <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">🕌</span>
-            <span>Traditional Indian</span>
-          </div>
+          <img src="stickers/SD-Q9R-4T6.svg" alt="Car sticker SD-Q9R-4T6" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="tag">Full Home</span>
-          <h3>Traditional Indian</h3>
-          <p>Rich fabrics, intricate woodwork, and warm jewel tones rooted in Indian heritage.</p>
+          <span class="sticker-id">ID: <code>SD-Q9R-4T6</code></span>
         </div>
         <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Traditional%20Indian%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
+          <button type="button" class="copy-id" data-id="SD-Q9R-4T6">Copy ID</button>
         </div>
       </div>
 
-      <!-- Design 6 -->
+      <!-- Sticker SD-V3W-1Y8 -->
       <div class="design-card">
         <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">🍳</span>
-            <span>Modular Kitchen</span>
-          </div>
+          <img src="stickers/SD-V3W-1Y8.svg" alt="Car sticker SD-V3W-1Y8" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="tag">Kitchen</span>
-          <h3>Sleek Modular Kitchen</h3>
-          <p>Handleless cabinets, quartz countertops, and smart storage for the modern home cook.</p>
+          <span class="sticker-id">ID: <code>SD-V3W-1Y8</code></span>
         </div>
         <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Sleek%20Modular%20Kitchen%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
-        </div>
-      </div>
-
-      <!-- Design 7 -->
-      <div class="design-card">
-        <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">⭐</span>
-            <span>Luxury Classic</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <span class="tag">Full Home</span>
-          <h3>Luxury Classic</h3>
-          <p>Ornate mouldings, marble flooring, and gold accents for a truly opulent home.</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Luxury%20Classic%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
-        </div>
-      </div>
-
-      <!-- Design 8 -->
-      <div class="design-card">
-        <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">🏖️</span>
-            <span>Coastal Breeze</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <span class="tag">Living Room</span>
-          <h3>Coastal Breeze</h3>
-          <p>Light blues, sandy whites, and natural rattan for a breezy, holiday-inspired retreat.</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Coastal%20Breeze%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
-        </div>
-      </div>
-
-      <!-- Design 9 -->
-      <div class="design-card">
-        <div class="img-wrap">
-          <div class="img-placeholder">
-            <span class="ph-icon">💼</span>
-            <span>Contemporary Office</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <span class="tag">Office</span>
-          <h3>Contemporary Office</h3>
-          <p>Ergonomic layouts, collaborative zones, and brand-aligned aesthetics for a modern workplace.</p>
-        </div>
-        <div class="card-actions">
-          <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%20am%20interested%20in%20the%20Contemporary%20Office%20design."
-             target="_blank" rel="noopener noreferrer">💬 I'm Interested</a>
+          <button type="button" class="copy-id" data-id="SD-V3W-1Y8">Copy ID</button>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===== Not sure? CTA ===== -->
+  <!-- ===== How to order CTA ===== -->
   <div class="cta-banner">
-    <h2>Not Sure Which Design? Let's Talk!</h2>
-    <p>Describe your vision and I'll suggest the best approach. Every project is unique — let's make yours exceptional.</p>
-    <a href="https://wa.me/919876543210?text=Hi%20Sukhdev%2C%20I%27d%20like%20to%20discuss%20a%20design%20project."
-       target="_blank" rel="noopener noreferrer" class="btn btn-primary">💬 Start a Conversation</a>
+    <h2>How to Order</h2>
+    <p>Note the ID of the sticker you want, then send it to me by email or Instagram DM and I'll reply with the details.</p>
+    <a href="mailto:sukhdev@example.com?subject=Sticker%20order&body=Hi%20Sukhdev%2C%20I%27d%20like%20the%20sticker%20with%20ID%3A%20" class="btn btn-primary">✉️ Email an Order</a>
     &nbsp;&nbsp;
-    <a href="mailto:sukhdev@example.com" class="btn btn-outline">✉️ Send an Email</a>
+    <a href="https://instagram.com/sukhdev.stickers" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📸 DM on Instagram</a>
   </div>
 
   <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2024 Sukhdev. All rights reserved. &nbsp;|&nbsp;
+    <p>&copy; 2026 Sukhdev Car Stickers. &nbsp;|&nbsp;
       <a href="index.html">← Back to Home</a>
     </p>
   </footer>
+
+  <script>
+    // Copy a sticker's ID to the clipboard so customers can paste it to you.
+    document.querySelectorAll('.copy-id').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var id = btn.getAttribute('data-id');
+        var done = function () {
+          var original = btn.textContent;
+          btn.textContent = 'Copied ' + id + ' ✓';
+          btn.classList.add('copied');
+          setTimeout(function () {
+            btn.textContent = original;
+            btn.classList.remove('copied');
+          }, 1500);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(id).then(done, done);
+        } else {
+          done();
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
