@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#0f3460"/>
+  <text x="50%" y="48%" font-family="Segoe UI, sans-serif" font-size="160" text-anchor="middle" dominant-baseline="middle">🚗</text>
+  <text x="50%" y="70%" font-family="Segoe UI, sans-serif" font-size="30" fill="#ffffffdd" text-anchor="middle">Mustang Flame Wrap</text>
+</svg>
