@@ -418,6 +418,12 @@ section .section-sub {
   flex-direction: column;
 }
 
+/* Ensure search-filtered cards are hidden; display:flex above would
+   otherwise override the browser's default [hidden] { display: none }. */
+.design-card[hidden] {
+  display: none;
+}
+
 .design-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
@@ -683,15 +689,31 @@ footer a:hover {
 }
 
 @media (max-width: 600px) {
-  header { padding: 0 1rem; }
+  /* Stack the header into two centered rows so the brand name never
+     collides with the nav links on narrow phones. */
+  header {
+    padding: 0.6rem 1rem;
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  header .logo { justify-content: center; }
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem 1.1rem;
+  }
   .hero { padding: 4.5rem 1.25rem 4rem; }
   .hero h1 { font-size: 2rem; }
   .hero p.tagline { font-size: 1.05rem; }
   section { padding: 3rem 1.25rem; }
   section h2 { font-size: 1.6rem; }
-  header nav a { margin-left: 1rem; font-size: 0.85rem; }
+  header nav a { margin-left: 0; font-size: 0.85rem; }
   header .logo .logo-img { height: 30px; }
-  header .logo .brand-name { font-size: 1rem; }
+  header .logo .brand-name { font-size: 0.95rem; }
 
   /* Stacked, full-width, easy-to-tap buttons on phones */
   .hero-actions,
