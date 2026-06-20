@@ -500,6 +500,8 @@ section .section-sub {
 }
 
 .design-card .card-actions {
+  display: flex;
+  gap: 0.6rem;
   padding: 0 1.2rem 1.2rem;
 }
 
@@ -562,29 +564,47 @@ section .section-sub {
   border-radius: 6px;
 }
 
-.design-card .card-actions .copy-id {
+.design-card .card-actions .copy-id,
+.design-card .card-actions .copy-img {
+  flex: 1;
   display: block;
-  width: 100%;
   text-align: center;
-  padding: 0.6rem 1rem;
-  background: var(--grad-accent);
-  color: #0b1020;
-  border: none;
+  padding: 0.6rem 0.8rem;
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  transition: filter 0.2s;
+  transition: filter 0.2s, background 0.2s, color 0.2s;
 }
 
-.design-card .card-actions .copy-id:hover {
+.design-card .card-actions .copy-id {
+  background: var(--grad-accent);
+  color: #0b1020;
+  border: none;
+}
+
+.design-card .card-actions .copy-img {
+  background: transparent;
+  color: var(--brand-700);
+  border: 2px solid var(--brand-700);
+}
+
+.design-card .card-actions .copy-id:hover,
+.design-card .card-actions .copy-img:hover {
   filter: brightness(1.05);
 }
 
-.design-card .card-actions .copy-id.copied {
+.design-card .card-actions .copy-img:hover {
+  background: var(--brand-700);
+  color: #fff;
+}
+
+.design-card .card-actions .copy-id.copied,
+.design-card .card-actions .copy-img.copied {
   background: #18a06b;
   color: #fff;
+  border-color: #18a06b;
 }
 
 /* ===== Featured Work Collage ===== */
