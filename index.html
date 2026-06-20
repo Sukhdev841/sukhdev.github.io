@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sukhdev – Custom car sticker design. Browse sticker designs by ID, see past work, and get in touch." />
-  <title>Sukhdev | Custom Car Stickers</title>
+  <meta name="description" content="Custom car sticker design. Browse sticker designs by ID, see past work, and get in touch." />
+  <!-- Title is built from this label + the brand name (see js/site.js) -->
+  <title>Custom Car Stickers</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/site.js" defer></script>
 </head>
-<body>
+<body data-page-title="Custom Car Stickers">
 
   <!-- ===== Header ===== -->
   <header>
     <!-- Replace assets/logo.svg with your own website logo -->
     <a href="index.html" class="logo">
-      <img src="assets/logo.svg" alt="Sukhdev Car Stickers logo" class="logo-img" />
+      <img src="assets/logo.svg" alt="Car stickers logo" class="logo-img" />
+      <span class="brand-name" data-brand></span>
     </a>
     <nav>
       <a href="index.html" class="active">Home</a>
@@ -29,9 +32,10 @@
     <div class="hero-overlay">
       <h1>Custom <span>Car Stickers</span></h1>
       <p class="tagline">I design custom stickers for cars — and only cars. Pick a design, tell me its ID, and I'll make it yours.</p>
-      <a href="designs.html" class="btn btn-primary">Browse Sticker Designs</a>
-      &nbsp;&nbsp;
-      <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      <div class="hero-actions">
+        <a href="designs.html" class="btn btn-primary">Browse Sticker Designs</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
     </div>
   </div>
 
@@ -94,7 +98,7 @@
 
   <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2026 Sukhdev Car Stickers. &nbsp;|&nbsp;
+    <p>&copy; <span data-year></span> <span data-brand></span>. &nbsp;|&nbsp;
       <a href="mailto:sukhdev@example.com">Email</a> &nbsp;·&nbsp;
       <a href="tel:+910000000000">Phone</a> &nbsp;·&nbsp;
       <a href="https://instagram.com/sukhdev.stickers" target="_blank" rel="noopener noreferrer">Instagram</a>
