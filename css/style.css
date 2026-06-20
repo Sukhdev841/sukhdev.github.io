@@ -418,6 +418,12 @@ section .section-sub {
   flex-direction: column;
 }
 
+/* Ensure search-filtered cards are hidden; display:flex above would
+   otherwise override the browser's default [hidden] { display: none }. */
+.design-card[hidden] {
+  display: none;
+}
+
 .design-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
