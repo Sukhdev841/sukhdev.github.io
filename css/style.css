@@ -586,7 +586,7 @@ section .section-sub {
   color: #fff;
 }
 
-/* ===== Past Work Collage ===== */
+/* ===== Featured Work Collage ===== */
 .collage {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

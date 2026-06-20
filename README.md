@@ -6,7 +6,7 @@ A simple static website for **custom car sticker design**. No build step or fram
 
 - `index.html` — Home: logo, hero background, an "About me" photo, and contact (Email, Phone, Instagram).
 - `designs.html` — Sticker designs with a **search box** (filter by name, category or ID). Each sticker has a unique **ID** that customers quote when ordering.
-- `pastwork.html` — A collage of completed work, newest first.
+- `featuredwork.html` — A collage of completed work, newest first.
 
 ## Brand name (single source of truth)
 
@@ -36,9 +36,9 @@ on `designs.html`, so the image name and the shown ID always match, and customer
 by name, category or ID. To add a sticker: drop the image in `stickers/` named with its ID and
 add a matching card in `designs.html`. See `stickers/README.md`.
 
-### `past-work/`
-Photos of completed jobs. Prefix file names with the date (`YYYY-MM-DD-...`) so the Past Work
-page can show the **newest first**. No IDs or captions are shown. See `past-work/README.md`.
+### `featured-work/`
+Photos of completed jobs. Prefix file names with the date (`YYYY-MM-DD-...`) so the Featured Work
+page can show the **newest first**. No IDs or captions are shown. See `featured-work/README.md`.
 
 ## Contact
 
