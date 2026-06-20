@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Browse Sukhdev's car sticker designs. Each sticker has a unique ID — tell me the ID of the one you want." />
-  <title>Sticker Designs | Sukhdev</title>
+  <meta name="description" content="Browse car sticker designs. Search by name, ID or category, then tell me the ID of the one you want." />
+  <title>Sticker Designs</title>
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/site.js" defer></script>
 </head>
-<body>
+<body data-page-title="Sticker Designs">
 
   <!-- ===== Header ===== -->
   <header>
     <a href="index.html" class="logo">
-      <img src="assets/logo.svg" alt="Sukhdev Car Stickers logo" class="logo-img" />
+      <img src="assets/logo.svg" alt="Car stickers logo" class="logo-img" />
+      <span class="brand-name" data-brand></span>
     </a>
     <nav>
       <a href="index.html">Home</a>
@@ -31,104 +33,127 @@
   <!-- ===== Stickers Grid ===== -->
   <section>
     <h2>All Stickers</h2>
-    <p class="section-sub">Tap “Copy ID”, then email or DM me the ID of the sticker you want.</p>
+    <p class="section-sub">Search by name, category or ID. Tap “Copy ID”, then email or DM me the ID of the sticker you want.</p>
+
+    <!-- Search filters the cards below by name, category or ID (substring match) -->
+    <div class="search-bar">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <label for="sticker-search" class="sr-only" style="position:absolute;left:-9999px;">Search stickers</label>
+      <input type="search" id="sticker-search" placeholder="Search stickers by name, category or ID…" autocomplete="off" />
+    </div>
 
     <div class="designs-grid">
 
-      <!-- Each card's ID must match its file name in /stickers -->
-      <!-- Sticker SD-A1B-7Z9 -->
-      <div class="design-card">
+      <!-- Each card's ID matches its file name in /stickers: name-category-XXX-YYY -->
+      <!-- Blazing Flames -->
+      <div class="design-card" data-name="Blazing Flames" data-category="Fire" data-id="blazing-flames-fire-A1B-7Z9">
         <div class="img-wrap">
-          <img src="stickers/SD-A1B-7Z9.svg" alt="Car sticker SD-A1B-7Z9" loading="lazy" />
+          <img src="stickers/blazing-flames-fire-A1B-7Z9.svg" alt="Blazing Flames car sticker (Fire)" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="sticker-id">ID: <code>SD-A1B-7Z9</code></span>
+          <h3>Blazing Flames</h3>
+          <span class="tag">Fire</span>
+          <span class="sticker-id">ID: <code>blazing-flames-fire-A1B-7Z9</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="SD-A1B-7Z9">Copy ID</button>
+          <button type="button" class="copy-id" data-id="blazing-flames-fire-A1B-7Z9">Copy ID</button>
         </div>
       </div>
 
-      <!-- Sticker SD-C4F-92K -->
-      <div class="design-card">
+      <!-- Roaring Dragon -->
+      <div class="design-card" data-name="Roaring Dragon" data-category="Tribal" data-id="roaring-dragon-tribal-C4F-92K">
         <div class="img-wrap">
-          <img src="stickers/SD-C4F-92K.svg" alt="Car sticker SD-C4F-92K" loading="lazy" />
+          <img src="stickers/roaring-dragon-tribal-C4F-92K.svg" alt="Roaring Dragon car sticker (Tribal)" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="sticker-id">ID: <code>SD-C4F-92K</code></span>
+          <h3>Roaring Dragon</h3>
+          <span class="tag">Tribal</span>
+          <span class="sticker-id">ID: <code>roaring-dragon-tribal-C4F-92K</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="SD-C4F-92K">Copy ID</button>
+          <button type="button" class="copy-id" data-id="roaring-dragon-tribal-C4F-92K">Copy ID</button>
         </div>
       </div>
 
-      <!-- Sticker SD-E7H-3X1 -->
-      <div class="design-card">
+      <!-- Electric Bolt -->
+      <div class="design-card" data-name="Electric Bolt" data-category="Abstract" data-id="electric-bolt-abstract-E7H-3X1">
         <div class="img-wrap">
-          <img src="stickers/SD-E7H-3X1.svg" alt="Car sticker SD-E7H-3X1" loading="lazy" />
+          <img src="stickers/electric-bolt-abstract-E7H-3X1.svg" alt="Electric Bolt car sticker (Abstract)" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="sticker-id">ID: <code>SD-E7H-3X1</code></span>
+          <h3>Electric Bolt</h3>
+          <span class="tag">Abstract</span>
+          <span class="sticker-id">ID: <code>electric-bolt-abstract-E7H-3X1</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="SD-E7H-3X1">Copy ID</button>
+          <button type="button" class="copy-id" data-id="electric-bolt-abstract-E7H-3X1">Copy ID</button>
         </div>
       </div>
 
-      <!-- Sticker SD-K2M-8P5 -->
-      <div class="design-card">
+      <!-- Checkered Flag -->
+      <div class="design-card" data-name="Checkered Flag" data-category="Racing" data-id="checkered-flag-racing-K2M-8P5">
         <div class="img-wrap">
-          <img src="stickers/SD-K2M-8P5.svg" alt="Car sticker SD-K2M-8P5" loading="lazy" />
+          <img src="stickers/checkered-flag-racing-K2M-8P5.svg" alt="Checkered Flag car sticker (Racing)" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="sticker-id">ID: <code>SD-K2M-8P5</code></span>
+          <h3>Checkered Flag</h3>
+          <span class="tag">Racing</span>
+          <span class="sticker-id">ID: <code>checkered-flag-racing-K2M-8P5</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="SD-K2M-8P5">Copy ID</button>
+          <button type="button" class="copy-id" data-id="checkered-flag-racing-K2M-8P5">Copy ID</button>
         </div>
       </div>
 
-      <!-- Sticker SD-Q9R-4T6 -->
-      <div class="design-card">
+      <!-- Rebel Skull -->
+      <div class="design-card" data-name="Rebel Skull" data-category="Gothic" data-id="rebel-skull-gothic-Q9R-4T6">
         <div class="img-wrap">
-          <img src="stickers/SD-Q9R-4T6.svg" alt="Car sticker SD-Q9R-4T6" loading="lazy" />
+          <img src="stickers/rebel-skull-gothic-Q9R-4T6.svg" alt="Rebel Skull car sticker (Gothic)" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="sticker-id">ID: <code>SD-Q9R-4T6</code></span>
+          <h3>Rebel Skull</h3>
+          <span class="tag">Gothic</span>
+          <span class="sticker-id">ID: <code>rebel-skull-gothic-Q9R-4T6</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="SD-Q9R-4T6">Copy ID</button>
+          <button type="button" class="copy-id" data-id="rebel-skull-gothic-Q9R-4T6">Copy ID</button>
         </div>
       </div>
 
-      <!-- Sticker SD-V3W-1Y8 -->
-      <div class="design-card">
+      <!-- Soaring Eagle -->
+      <div class="design-card" data-name="Soaring Eagle" data-category="Wildlife" data-id="soaring-eagle-wildlife-V3W-1Y8">
         <div class="img-wrap">
-          <img src="stickers/SD-V3W-1Y8.svg" alt="Car sticker SD-V3W-1Y8" loading="lazy" />
+          <img src="stickers/soaring-eagle-wildlife-V3W-1Y8.svg" alt="Soaring Eagle car sticker (Wildlife)" loading="lazy" />
         </div>
         <div class="card-body">
-          <span class="sticker-id">ID: <code>SD-V3W-1Y8</code></span>
+          <h3>Soaring Eagle</h3>
+          <span class="tag">Wildlife</span>
+          <span class="sticker-id">ID: <code>soaring-eagle-wildlife-V3W-1Y8</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="SD-V3W-1Y8">Copy ID</button>
+          <button type="button" class="copy-id" data-id="soaring-eagle-wildlife-V3W-1Y8">Copy ID</button>
         </div>
       </div>
 
     </div>
+
+    <!-- Shown by the search script when nothing matches -->
+    <p class="no-results" hidden>No stickers match your search. Try a different name, category or ID.</p>
   </section>
 
   <!-- ===== How to order CTA ===== -->
   <div class="cta-banner">
     <h2>How to Order</h2>
     <p>Note the ID of the sticker you want, then send it to me by email or Instagram DM and I'll reply with the details.</p>
-    <a href="mailto:sukhdev@example.com?subject=Sticker%20order&body=Hi%20Sukhdev%2C%20I%27d%20like%20the%20sticker%20with%20ID%3A%20" class="btn btn-primary">✉️ Email an Order</a>
-    &nbsp;&nbsp;
-    <a href="https://instagram.com/sukhdev.stickers" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📸 DM on Instagram</a>
+    <div class="cta-actions">
+      <a href="mailto:sukhdev@example.com?subject=Sticker%20order&body=Hi%2C%20I%27d%20like%20the%20sticker%20with%20ID%3A%20" class="btn btn-primary">✉️ Email an Order</a>
+      <a href="https://instagram.com/sukhdev.stickers" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📸 DM on Instagram</a>
+    </div>
   </div>
 
   <!-- ===== Footer ===== -->
   <footer>
-    <p>&copy; 2026 Sukhdev Car Stickers. &nbsp;|&nbsp;
+    <p>&copy; <span data-year></span> <span data-brand></span>. &nbsp;|&nbsp;
       <a href="index.html">← Back to Home</a>
     </p>
   </footer>
@@ -140,7 +165,7 @@
         var id = btn.getAttribute('data-id');
         var done = function () {
           var original = btn.textContent;
-          btn.textContent = 'Copied ' + id + ' ✓';
+          btn.textContent = 'Copied ✓';
           btn.classList.add('copied');
           setTimeout(function () {
             btn.textContent = original;
@@ -154,6 +179,30 @@
         }
       });
     });
+
+    // Live search: filter cards by substring of name, category or ID.
+    (function () {
+      var input = document.getElementById('sticker-search');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.design-card'));
+      var noResults = document.querySelector('.no-results');
+      if (!input) return;
+
+      input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase();
+        var visible = 0;
+        cards.forEach(function (card) {
+          var haystack = [
+            card.getAttribute('data-name'),
+            card.getAttribute('data-category'),
+            card.getAttribute('data-id')
+          ].join(' ').toLowerCase();
+          var match = q === '' || haystack.indexOf(q) !== -1;
+          card.hidden = !match;
+          if (match) visible++;
+        });
+        if (noResults) noResults.hidden = visible !== 0;
+      });
+    })();
   </script>
 
 </body>
