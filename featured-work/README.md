@@ -1,14 +1,14 @@
-# Past Work folder
+# Featured Work folder
 
 Photos of car sticker jobs you've already completed. Shown on `pastwork.html` as a collage.
 
 ## Naming rule — date prefix for "latest first"
 
 - Prefix each file name with the date in `YYYY-MM-DD` format, e.g. `2026-06-15-mustang-flames.svg`.
-- The Past Work page lists images **newest first** (highest date on top), so the date prefix controls the order.
+- The Featured Work page lists images **newest first** (highest date on top), so the date prefix controls the order.
 - No IDs or captions are shown here — this gallery is intentionally simple.
 
-## Adding a new past-work image
+## Adding a new featured-work image
 
 1. Drop the image in this folder with a `YYYY-MM-DD-description` name.
 2. Add one matching `<img>` entry near the **top** of the collage list in `pastwork.html` (newest first).
