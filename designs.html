@@ -27,13 +27,13 @@
   <!-- ===== Page Hero ===== -->
   <div class="page-hero">
     <h1>Car Sticker Designs</h1>
-    <p>Every sticker has a unique ID. Note the ID of the one you like and send it to me — that's all I need to get started.</p>
+    <p>Every sticker has a unique ID. Note the ID of the one you like and send it to us — that's all we need to get started.</p>
   </div>
 
   <!-- ===== Stickers Grid ===== -->
   <section>
     <h2>All Stickers</h2>
-    <p class="section-sub">Search by name, category or ID. Tap “Copy ID”, then email or DM me the ID of the sticker you want.</p>
+    <p class="section-sub">Search by name, category or ID. Tap “Copy image + ID”, then paste it into an email or DM — the sticker image and its ID come through together.</p>
 
     <!-- Search filters the cards below by name, category or ID (substring match) -->
     <div class="search-bar">
@@ -56,7 +56,7 @@
           <span class="sticker-id">ID: <code>blazing-flames-fire-A1B-7Z9</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="blazing-flames-fire-A1B-7Z9">Copy ID</button>
+          <button type="button" class="copy-id" data-id="blazing-flames-fire-A1B-7Z9">Copy image + ID</button>
         </div>
       </div>
 
@@ -71,7 +71,7 @@
           <span class="sticker-id">ID: <code>roaring-dragon-tribal-C4F-92K</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="roaring-dragon-tribal-C4F-92K">Copy ID</button>
+          <button type="button" class="copy-id" data-id="roaring-dragon-tribal-C4F-92K">Copy image + ID</button>
         </div>
       </div>
 
@@ -86,7 +86,7 @@
           <span class="sticker-id">ID: <code>electric-bolt-abstract-E7H-3X1</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="electric-bolt-abstract-E7H-3X1">Copy ID</button>
+          <button type="button" class="copy-id" data-id="electric-bolt-abstract-E7H-3X1">Copy image + ID</button>
         </div>
       </div>
 
@@ -101,7 +101,7 @@
           <span class="sticker-id">ID: <code>checkered-flag-racing-K2M-8P5</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="checkered-flag-racing-K2M-8P5">Copy ID</button>
+          <button type="button" class="copy-id" data-id="checkered-flag-racing-K2M-8P5">Copy image + ID</button>
         </div>
       </div>
 
@@ -116,7 +116,7 @@
           <span class="sticker-id">ID: <code>rebel-skull-gothic-Q9R-4T6</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="rebel-skull-gothic-Q9R-4T6">Copy ID</button>
+          <button type="button" class="copy-id" data-id="rebel-skull-gothic-Q9R-4T6">Copy image + ID</button>
         </div>
       </div>
 
@@ -131,7 +131,7 @@
           <span class="sticker-id">ID: <code>soaring-eagle-wildlife-V3W-1Y8</code></span>
         </div>
         <div class="card-actions">
-          <button type="button" class="copy-id" data-id="soaring-eagle-wildlife-V3W-1Y8">Copy ID</button>
+          <button type="button" class="copy-id" data-id="soaring-eagle-wildlife-V3W-1Y8">Copy image + ID</button>
         </div>
       </div>
 
@@ -144,7 +144,7 @@
   <!-- ===== How to order CTA ===== -->
   <div class="cta-banner">
     <h2>How to Order</h2>
-    <p>Note the ID of the sticker you want, then send it to me by email or Instagram DM and I'll reply with the details.</p>
+    <p>Note the ID of the sticker you want, then send it to us by email or Instagram DM and we'll reply with the details.</p>
     <div class="cta-actions">
       <a href="mailto:sukhdev@example.com?subject=Sticker%20order&body=Hi%2C%20I%27d%20like%20the%20sticker%20with%20ID%3A%20" class="btn btn-primary">✉️ Email an Order</a>
       <a href="https://instagram.com/sukhdev.stickers" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📸 DM on Instagram</a>
@@ -159,24 +159,85 @@
   </footer>
 
   <script>
-    // Copy a sticker's ID to the clipboard so customers can paste it to you.
+    // Copy a sticker's image AND its ID to the clipboard together, so customers
+    // can paste both into an email or DM. When pasted into a rich editor (Gmail,
+    // Docs, Word) the image and ID show together; plain-text fields get just the ID.
     document.querySelectorAll('.copy-id').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var id = btn.getAttribute('data-id');
-        var done = function () {
-          var original = btn.textContent;
-          btn.textContent = 'Copied ✓';
+        var card = btn.closest('.design-card');
+        var img = card ? card.querySelector('img') : null;
+
+        var flash = function (msg) {
+          var original = btn.getAttribute('data-label') || btn.textContent;
+          btn.setAttribute('data-label', original);
+          btn.textContent = msg || 'Copied ✓';
           btn.classList.add('copied');
           setTimeout(function () {
             btn.textContent = original;
             btn.classList.remove('copied');
           }, 1500);
         };
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(id).then(done, done);
-        } else {
-          done();
+
+        // Fallback: copy just the ID as plain text.
+        var copyIdOnly = function () {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(id).then(function () {
+              flash('Copied ID ✓');
+            }, function () {
+              flash('Copied ID ✓');
+            });
+          } else {
+            flash('Copied ID ✓');
+          }
+        };
+
+        // Render the (SVG) sticker to a PNG data URL via canvas. The Clipboard API
+        // does not support image/svg+xml, so we rasterise it first.
+        var withPngDataUrl = function (onReady, onError) {
+          if (!img || !img.getAttribute('src')) {
+            onError();
+            return;
+          }
+          var loader = new Image();
+          loader.crossOrigin = 'anonymous';
+          loader.onload = function () {
+            try {
+              var canvas = document.createElement('canvas');
+              canvas.width = loader.naturalWidth || 600;
+              canvas.height = loader.naturalHeight || 372;
+              var ctx = canvas.getContext('2d');
+              ctx.drawImage(loader, 0, 0, canvas.width, canvas.height);
+              onReady(canvas.toDataURL('image/png'));
+            } catch (e) {
+              onError();
+            }
+          };
+          loader.onerror = onError;
+          loader.src = img.getAttribute('src');
+        };
+
+        var canRichCopy = !!(navigator.clipboard &&
+          navigator.clipboard.write &&
+          typeof ClipboardItem !== 'undefined');
+
+        if (!canRichCopy) {
+          copyIdOnly();
+          return;
         }
+
+        withPngDataUrl(function (pngUrl) {
+          var altText = (img && img.getAttribute('alt')) || id;
+          var html = '<div><img src="' + pngUrl + '" alt="' + altText +
+            '"><br>ID: ' + id + '</div>';
+          var item = new ClipboardItem({
+            'text/html': new Blob([html], { type: 'text/html' }),
+            'text/plain': new Blob([id], { type: 'text/plain' })
+          });
+          navigator.clipboard.write([item]).then(function () {
+            flash('Copied image + ID ✓');
+          }, copyIdOnly);
+        }, copyIdOnly);
       });
     });
 
