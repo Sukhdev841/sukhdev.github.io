@@ -172,7 +172,7 @@ header nav a.active {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(124, 92, 255, 0.35);
+  box-shadow: 0 6px 18px rgba(124, 92, 255, 0.22);
 }
 
 .btn-primary {
@@ -620,6 +620,100 @@ section .section-sub {
 
 .collage-item.tall {
   grid-row: span 2;
+}
+
+/* ===== How It Works / Steps ===== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.step-card {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 1.8rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--surface-2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-card .step-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 0.8rem;
+}
+
+.step-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand-900);
+  margin-bottom: 0.4rem;
+}
+
+.step-card p {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* ===== Image Lightbox ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(11, 16, 32, 0.85);
+  backdrop-filter: blur(2px);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Hint that gallery images can be enlarged */
+.design-card .img-wrap,
+.collage-item {
+  cursor: zoom-in;
 }
 
 /* ===== Footer ===== */
